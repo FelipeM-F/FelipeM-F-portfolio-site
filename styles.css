@@ -224,6 +224,7 @@ body {
 .social-links a {
     color: var(--primary-color);
     font-size: 1.5rem;
+    text-decoration: none;
     transition: all var(--transition);
     display: flex;
     align-items: center;
@@ -494,8 +495,7 @@ body {
 
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1fr;
     align-items: start;
 }
 
@@ -542,41 +542,6 @@ body {
 
 .contact-method a:hover {
     color: var(--primary-color);
-}
-
-.contact-form {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 15px;
-    border: 1px solid rgba(0, 212, 255, 0.1);
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(0, 212, 255, 0.2);
-    border-radius: 8px;
-    color: var(--text-light);
-    font-family: inherit;
-    transition: border-color var(--transition);
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: rgba(224, 224, 224, 0.5);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
 }
 
 /* Footer */

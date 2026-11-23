@@ -79,47 +79,17 @@ Ou usando Netlify:
 
 ## 📝 Personalização
 
-### Editar Informações Pessoais
+### Editar Informações e Projetos
 
-Abra `index.html` e procure por:
+Edite `content.js` para atualizar nome, descrição, redes sociais, textos da seção
+"Sobre", estatísticas, projetos e habilidades. Não é necessário alterar a estrutura
+do `index.html`.
 
-```html
-<!-- Hero Section -->
-<h1 class="hero-title">Felipe M.</h1>
-<p class="hero-subtitle">Desenvolvedor Full Stack</p>
-
-<!-- Social Links -->
-<a href="https://github.com/FelipeM-F" target="_blank">GitHub</a>
-<a href="https://linkedin.com/in/seu-perfil" target="_blank">LinkedIn</a>
-```
-
-### Atualizar Email de Contato
-
-Procure por `mailto:seu-email@example.com` e substitua pelo seu email.
-
-### Adicionar/Remover Projetos
-
-Na seção de **Projects**, adicione um novo card:
-
-```html
-<div class="project-card">
-    <div class="project-header">
-        <h3>Nome do Projeto</h3>
-        <div class="project-tags">
-            <span class="tag">Tecnologia 1</span>
-            <span class="tag">Tecnologia 2</span>
-        </div>
-    </div>
-    <p class="project-description">
-        Descrição do projeto...
-    </p>
-    <div class="project-links">
-        <a href="seu-link" target="_blank">
-            <i class="fab fa-github"></i> Código
-        </a>
-    </div>
-</div>
-```
+Para adicionar um projeto, copie um dos objetos da lista `projects` em
+`content.js` e atualize `name`, `technologies`, `description` e `links`. Para
+atualizar uma rede social ou email, altere a entrada correspondente em
+`socialLinks`; os links da página inicial, da seção de contato e do rodapé usam
+essa mesma lista.
 
 ### Mudar Cores
 
@@ -154,25 +124,14 @@ O site é totalmente responsivo com breakpoints em:
 - Menu hambúrguer para mobile
 - Navegação suave (smooth scroll)
 - Intersection Observer para animações ao scroll
-- Formulário de contato com validação
+- Links diretos de contato por email, GitHub e LinkedIn
 - Efeito parallax na hero
 - Partículas flutuantes dinâmicas
 - Active state na navegação baseado no scroll
 
-## 📧 Formulário de Contato
+## 📧 Contato
 
-O formulário é apenas um frontend. Para funcionalidade completa, você pode integrar com:
-- **Formspree** - https://formspree.io
-- **EmailJS** - https://www.emailjs.com
-- **Backend próprio**
-
-Exemplo com Formspree:
-
-```html
-<form action="https://formspree.io/f/seu-id" method="POST">
-    <!-- campos do formulário -->
-</form>
-```
+A seção de contato apresenta links diretos para email, GitHub e LinkedIn.
 
 ## 🔍 SEO
 

@@ -1,3 +1,135 @@
+// Render the editable content from content.js into the page.
+const content = window.portfolioContent;
+if (!content) {
+    throw new Error('Não foi possível carregar o conteúdo do portfólio (content.js).');
+}
+
+function createElement(tagName, className, text) {
+    const element = document.createElement(tagName);
+    if (className) element.className = className;
+    if (text !== undefined) element.textContent = text;
+    return element;
+}
+
+function createContentLink(link, className) {
+    const anchor = createElement('a', className);
+    const url = link.homeUrl || link.url;
+    anchor.href = url;
+    if (url.startsWith('http')) {
+        anchor.target = '_blank';
+        anchor.rel = 'noopener noreferrer';
+    }
+
+    if (link.icon) {
+        anchor.appendChild(createElement('i', link.icon));
+    }
+    if (link.label) {
+        anchor.appendChild(document.createTextNode(` ${link.label}`));
+    }
+    return anchor;
+}
+
+function renderPortfolioContent() {
+    document.title = `${content.name} - Portfólio de Projetos`;
+    document.querySelector('meta[name="description"]').content = content.intro;
+    document.getElementById('nav-logo-name').textContent = content.name;
+    document.getElementById('profile-name').textContent = content.name;
+    document.getElementById('profile-role').textContent = content.role;
+    document.getElementById('profile-intro').textContent = content.intro;
+    document.getElementById('contact-heading').textContent = content.contact.heading;
+    document.getElementById('contact-description').textContent = content.contact.description;
+
+    const aboutText = document.getElementById('about-text');
+    content.about.forEach(paragraph => {
+        aboutText.appendChild(createElement('p', '', paragraph));
+    });
+
+    const stats = document.getElementById('about-stats');
+    content.stats.forEach(stat => {
+        const item = createElement('div', 'stat');
+        item.appendChild(createElement('h3', '', stat.value));
+        item.appendChild(createElement('p', '', stat.label));
+        stats.appendChild(item);
+    });
+
+    const socialLinks = document.getElementById('social-links');
+    content.socialLinks.forEach(link => {
+        const anchor = createContentLink(link);
+        anchor.setAttribute('aria-label', link.label);
+        socialLinks.appendChild(anchor);
+    });
+
+    const projects = document.getElementById('projects-grid');
+    content.projects.forEach(project => {
+        const card = createElement('div', 'project-card');
+        const header = createElement('div', 'project-header');
+        const tags = createElement('div', 'project-tags');
+        header.appendChild(createElement('h3', '', project.name));
+        project.technologies.forEach(technology => {
+            tags.appendChild(createElement('span', 'tag', technology));
+        });
+        header.appendChild(tags);
+        card.appendChild(header);
+        card.appendChild(createElement('p', 'project-description', project.description));
+
+        const links = createElement('div', 'project-links');
+        project.links.forEach(link => {
+            links.appendChild(createContentLink(link));
+        });
+        card.appendChild(links);
+        projects.appendChild(card);
+    });
+
+    const skills = document.getElementById('skills-grid');
+    content.skillCategories.forEach(category => {
+        const item = createElement('div', 'skill-category');
+        const heading = createElement('h3');
+        heading.appendChild(createElement('i', category.icon));
+        heading.appendChild(document.createTextNode(` ${category.name}`));
+        item.appendChild(heading);
+
+        const skillItems = createElement('div', 'skill-items');
+        category.skills.forEach(skill => {
+            skillItems.appendChild(createElement('div', 'skill-item', skill));
+        });
+        item.appendChild(skillItems);
+        skills.appendChild(item);
+    });
+
+    const contactMethods = document.getElementById('contact-methods');
+    content.socialLinks.forEach(link => {
+        const method = createElement('div', 'contact-method');
+        method.appendChild(createElement('i', link.icon));
+
+        const details = createElement('div');
+        details.appendChild(createElement('h4', '', link.label));
+        const anchor = createElement('a', '', link.text);
+        anchor.href = link.url;
+        if (link.url.startsWith('http')) {
+            anchor.target = '_blank';
+            anchor.rel = 'noopener noreferrer';
+        }
+        details.appendChild(anchor);
+        method.appendChild(details);
+        contactMethods.appendChild(method);
+    });
+
+    const footerLinks = document.getElementById('footer-links');
+    content.socialLinks.forEach(link => {
+        const anchor = createElement('a', '', link.label);
+        anchor.href = link.url;
+        if (link.url.startsWith('http')) {
+            anchor.target = '_blank';
+            anchor.rel = 'noopener noreferrer';
+        }
+        footerLinks.appendChild(anchor);
+    });
+    document.getElementById('footer-copyright').textContent =
+        `© ${new Date().getFullYear()} ${content.name} | Todos os direitos reservados.`;
+}
+
+renderPortfolioContent();
+
 // Mobile Menu Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
@@ -61,38 +193,6 @@ document.querySelectorAll('.project-card, .skill-category, .stat').forEach(el =>
     el.style.opacity = '0';
     observer.observe(el);
 });
-
-// Contact Form Handler
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const formData = new FormData(contactForm);
-        const data = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            message: formData.get('message')
-        };
-
-        // Here you would typically send the data to a backend service
-        console.log('Form data:', data);
-        
-        // Show success message
-        const submitBtn = contactForm.querySelector('button');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Mensagem Enviada! ✓';
-        submitBtn.style.background = 'linear-gradient(135deg, #00d4ff, #7c3aed)';
-        
-        // Reset form
-        contactForm.reset();
-        
-        // Restore button after 3 seconds
-        setTimeout(() => {
-            submitBtn.textContent = originalText;
-        }, 3000);
-    });
-}
 
 // Parallax effect on hero section
 const hero = document.querySelector('.hero');

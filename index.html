@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Felipe M. - Desenvolvedor Full Stack | Java, TypeScript, React, PHP">
+    <meta name="description" content="Portfólio de desenvolvedor full stack">
     <meta name="theme-color" content="#1a1a2e">
-    <title>Felipe M. - Portfólio de Projetos</title>
+    <title>Portfólio de Projetos</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="#home">Felipe M.</a>
+                <a href="#home" id="nav-logo-name">Portfólio</a>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Início</a></li>
@@ -31,345 +30,66 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="stars"></div>
         <div class="hero-content">
-            <h1 class="hero-title">Felipe M.</h1>
-            <p class="hero-subtitle">Desenvolvedor Full Stack</p>
-            <p class="hero-description">
-                Criando aplicações web modernas e robustas com Java, TypeScript, React e PHP
-            </p>
+            <h1 class="hero-title" id="profile-name"></h1>
+            <p class="hero-subtitle" id="profile-role"></p>
+            <p class="hero-description" id="profile-intro"></p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">Ver Projetos</a>
                 <a href="#contact" class="btn btn-secondary">Entre em Contato</a>
             </div>
-            <div class="social-links">
-                <a href="https://github.com/FelipeM-F" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:seu-email@example.com" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
+            <div class="social-links" id="social-links"></div>
         </div>
-        <div class="scroll-indicator">
-            <span></span>
-        </div>
+
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <h2>Sobre Mim</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Sou um desenvolvedor full stack apaixonado por criar soluções tecnológicas inovadoras. 
-                        Com experiência em múltiplas linguagens e frameworks, trabalho para transformar ideias 
-                        em aplicações funcionais e elegantes.
-                    </p>
-                    <p>
-                        Minha jornada inclui participação em bootcamps renomados, desenvolvimento de aplicações mobile 
-                        com Angular/Ionic, e contribuições em projetos open source. Estou sempre aprendendo novas tecnologias 
-                        e melhores práticas de desenvolvimento.
-                    </p>
-                    <p>
-                        Quando não estou codificando, posso estar participando de hackathons, estudando design patterns 
-                        ou explorando novas ferramentas de desenvolvimento.
-                    </p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <h3>20+</h3>
-                        <p>Projetos Completos</p>
-                    </div>
-                    <div class="stat">
-                        <h3>5+</h3>
-                        <p>Linguagens</p>
-                    </div>
-                    <div class="stat">
-                        <h3>10+</h3>
-                        <p>Tecnologias</p>
-                    </div>
-                </div>
+                <div class="about-text" id="about-text"></div>
+                <div class="about-stats" id="about-stats"></div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
             <h2>Projetos em Destaque</h2>
-            <div class="projects-grid">
-                
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>App Currículo</h3>
-                        <div class="project-tags">
-                            <span class="tag">TypeScript</span>
-                            <span class="tag">Angular</span>
-                            <span class="tag">Ionic</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Aplicativo mobile para cadastro e gerenciamento de currículos. Usuários podem 
-                        cadastrar seus currículos e aprovadores podem revisar candidaturas.
-                    </p>
-                    <div class="project-links">
-                        <a href="https://github.com/FelipeM-F/appCurriculo" target="_blank">
-                            <i class="fab fa-github"></i> Código
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Delta G CRUD</h3>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">PHP</span>
-                            <span class="tag">CodeIgniter</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Sistema completo de cadastro de alunos. Frontend moderno com React e backend 
-                        robusto com PHP CodeIgniter 4 e MySQL.
-                    </p>
-                    <div class="project-links">
-                        <a href="https://github.com/FelipeM-F/delta_G_CRUD" target="_blank">
-                            <i class="fab fa-github"></i> Código
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Spring Boot CRUD</h3>
-                        <div class="project-tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">Spring Boot</span>
-                            <span class="tag">OAuth2</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Aplicação CRUD com Spring Boot 3.3.2, autenticação OAuth2 via GitHub, 
-                        Spring Security e integração com MySQL. Documentação com Swagger.
-                    </p>
-                    <div class="project-links">
-                        <a href="https://github.com/FelipeM-F/Design-Patterns-com-Java" target="_blank">
-                            <i class="fab fa-github"></i> Código
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>GlascBet Hackathon</h3>
-                        <div class="project-tags">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Frontend</span>
-                            <span class="tag">Hackathon</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Plataforma de apostas online em partidas de League of Legends. 
-                        Desenvolvido durante hackathon TripleTen com foco em UX interativa.
-                    </p>
-                    <div class="project-links">
-                        <a href="https://github.com/FelipeM-F/Hackaton" target="_blank">
-                            <i class="fab fa-github"></i> Código
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Full Stack Open</h3>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">MongoDB</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Soluções e exercícios do curso Full Stack Open da Universidade de Helsinki. 
-                        Aprendizado prático de tecnologias modernas de desenvolvimento.
-                    </p>
-                    <div class="project-links">
-                        <a href="https://github.com/FelipeM-F/FullStackOpenHsk" target="_blank">
-                            <i class="fab fa-github"></i> Código
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Banco Digital OOP</h3>
-                        <div class="project-tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">OOP</span>
-                            <span class="tag">Patterns</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Lab de criação de um banco digital utilizando Java com foco em 
-                        Orientação a Objetos e design patterns.
-                    </p>
-                    <div class="project-links">
-                        <a href="https://github.com/FelipeM-F/lab-banco-digital-oo" target="_blank">
-                            <i class="fab fa-github"></i> Código
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <div class="projects-grid" id="projects-grid"></div>
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
             <h2>Habilidades Técnicas</h2>
-            <div class="skills-grid">
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Backend</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">Java</div>
-                        <div class="skill-item">PHP</div>
-                        <div class="skill-item">Spring Boot</div>
-                        <div class="skill-item">Node.js</div>
-                        <div class="skill-item">CodeIgniter</div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3><i class="fas fa-palette"></i> Frontend</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">React</div>
-                        <div class="skill-item">TypeScript</div>
-                        <div class="skill-item">Angular</div>
-                        <div class="skill-item">JavaScript</div>
-                        <div class="skill-item">HTML/CSS</div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3><i class="fas fa-mobile-alt"></i> Mobile</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">Ionic</div>
-                        <div class="skill-item">React Native</div>
-                        <div class="skill-item">Flutter</div>
-                        <div class="skill-item">Android</div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Banco de Dados</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">MySQL</div>
-                        <div class="skill-item">MongoDB</div>
-                        <div class="skill-item">PostgreSQL</div>
-                        <div class="skill-item">Firebase</div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3><i class="fas fa-wrench"></i> Ferramentas</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">Git</div>
-                        <div class="skill-item">Docker</div>
-                        <div class="skill-item">CI/CD</div>
-                        <div class="skill-item">Postman</div>
-                        <div class="skill-item">Swagger</div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3><i class="fas fa-lightbulb"></i> Conceitos</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">Design Patterns</div>
-                        <div class="skill-item">OOP</div>
-                        <div class="skill-item">REST API</div>
-                        <div class="skill-item">Testes</div>
-                    </div>
-                </div>
-            </div>
+            <div class="skills-grid" id="skills-grid"></div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2>Entre em Contato</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Vamos conversar!</h3>
-                    <p>
-                        Sou sempre aberto a novas oportunidades, colaborações e conversas sobre tecnologia. 
-                        Sinta-se livre para entrar em contato comigo através de qualquer um dos canais abaixo.
-                    </p>
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <a href="mailto:seu-email@example.com">seu-email@example.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fab fa-github"></i>
-                            <div>
-                                <h4>GitHub</h4>
-                                <a href="https://github.com/FelipeM-F" target="_blank">github.com/FelipeM-F</a>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fab fa-linkedin"></i>
-                            <div>
-                                <h4>LinkedIn</h4>
-                                <a href="https://linkedin.com/in/seu-perfil" target="_blank">LinkedIn Profile</a>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 id="contact-heading"></h3>
+                    <p id="contact-description"></p>
+                    <div class="contact-methods" id="contact-methods"></div>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Seu Nome" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Seu Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-                </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Felipe M. Todos os direitos reservados.</p>
-            <div class="footer-links">
-                <a href="https://github.com/FelipeM-F" target="_blank">GitHub</a>
-                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-                <a href="mailto:seu-email@example.com">Email</a>
-            </div>
+            <p id="footer-copyright"></p>
+            <div class="footer-links" id="footer-links"></div>
         </div>
     </footer>
 
+    <script src="content.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
