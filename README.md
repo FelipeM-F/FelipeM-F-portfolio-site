@@ -174,9 +174,9 @@ Este projeto está sob a licença MIT. Veja LICENSE para mais detalhes.
 ## 👨‍💻 Autor
 
 **Felipe M.**
-- GitHub: [@FelipeM-F](https://github.com/FelipeM-F)
+- GitHub: [@seuGit](https://github.com/seuGit)
 - Email: seu-email@example.com
-- LinkedIn: [Felipe Fracasso](https://www.linkedin.com/in/felipefracasso/)
+- LinkedIn: [Seu Linkedin](https://www.linkedin.com/in/seulinkedin/)
 
 ---
 
